@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-hz0QVl8WlpF+2VcfoZtuoA6VjM9pApIIZtC4YtTXG1UruxWxZ+nTk2UlV6BrZlB/" crossorigin="anonymous">
-
 # Introduction to JS Assignments
 
 ## Problem 1 - FizzBuzz
@@ -9,9 +7,24 @@ Write a program that prints the numbers from 1 to 50 and for multiples of '3' pr
 and for the multiples of '5' print “Buzz”.
 If the number is divisible by both 3 and 5 print “FizzBuzz”.
 ```
+<img src="terminal-fill.svg" width="50" height="50">
 
-<i class="fas fa-terminal"></i>
+```
+~/Desktop/GDSC/GDSC/Introduction_to_JS_assignments$ cat 0-test.js
+#!/usr/bin/node
+/* test for problem 1*/
 
+const fizzBuzz = require('./problem-1').fizzBuzz;
+console.log(fizzBuzz(3));
+console.log(fizzBuzz(5));
+console.log(fizzBuzz(15));
+console.log(fizzBuzz(7));
+~/Desktop/GDSC/GDSC/Introduction_to_JS_assignments$ ./0-test.js
+Fizz
+Buzz
+FizzBuzz
+7
+```
 ---
 
 ## Problem 2 - Simple Calculator
