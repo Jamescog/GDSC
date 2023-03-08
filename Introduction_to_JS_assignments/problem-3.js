@@ -19,5 +19,3 @@ const triangleLoop = (n, building) => {
 }
 
 export default triangleLoop;
-// Example usage
-console.log(triangleLoop(7, '#'));
