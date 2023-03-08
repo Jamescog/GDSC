@@ -43,11 +43,3 @@ const simpleCalculator = (num1, num2, operator) => {
 }
 
 export default simpleCalculator;
-
-// Example usage:
-// console.log(basicCalculator(5, 3, "+")); // Output: 8
-// console.log(basicCalculator(5, 3, "-")); // Output: 2
-// console.log(basicCalculator(5, 3, "*")); // Output: 15
-// console.log(basicCalculator(5, 0, "/")); // Throws error "Zero Division Detected! you can't divide 5 by 0"
-// console.log(basicCalculator(5, 3, "/")); // Output: 1.6666666666666667
-// console.log(basicCalculator(5, 3, "%")); // Output: 2
