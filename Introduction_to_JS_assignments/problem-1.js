@@ -31,8 +31,3 @@ const fizzBuzz = (n) => {
 
 export default fizzBuzz;
 
-// Example usage:
-// console.log(fizzBuzz(3)); // Output: "Fizz"
-// console.log(fizzBuzz(5)); // Output: "Buzz"
-// console.log(fizzBuzz(15)); // Output: "FizzBuzz"
-// console.log(fizzBuzz(7)); // Output: "7"
