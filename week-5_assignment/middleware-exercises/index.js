@@ -1,7 +1,6 @@
 const express = require("express");
 const fs = require("fs");
 const body_parser = require("body-parser");
-const { Console } = require("console");
 
 let database;
 
