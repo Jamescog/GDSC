@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign Up</title>
+    <style>
+      /* Styling for the page */
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 50px auto;
+        max-width: 500px;
+        padding: 30px;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      input[type="submit"] {
+        background-color: #333;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome!</h1>
+      <p>
+        You are not signed up yet. Please fill out the form below to create an
+        account:
+      </p>
+      <form action="#" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required />
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required />
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <label for="token">Token:</label>
+        <input type="text" id="token" name="token" required />
+        <input type="hidden" id="id" name="id" value="4" />
+        <input type="submit" value="Sign Up" />
+      </form>
+    </div>
+  </body>
+</html>
