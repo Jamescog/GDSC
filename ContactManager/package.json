@@ -1,0 +1,26 @@
+{
+  "name": "contactmanager",
+  "version": "1.0.0",
+  "description": "A REST API that allows users to manage their contacts. Users can create, read, update, and delete contacts, and view them in a list. The contacts are stored in a MongoDB database.",
+  "main": "server.js",
+  "scripts": {
+    "start" : "NODE_ENV=production node server",
+    "dev" : "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "RestAPI",
+    "contact-manager",
+    "express"
+  ],
+  "author": "Yaekob Demisse",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
