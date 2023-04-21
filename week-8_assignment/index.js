@@ -1,4 +1,3 @@
-const { compareSync } = require("bcrypt");
 const app = require("./app");
 
 app.listen(process.env.PORT, () => {
