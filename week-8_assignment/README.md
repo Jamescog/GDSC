@@ -31,7 +31,7 @@ The following libraries and frameworks are used:
     ```
 3. Set up environment variables by creating a .env file in the root directory of the project and add the following variables:
     ```
-    DB_URI=mongodb://localhost:27017/user-auth
+    DB_URI=mongodb://127.0.0.1/user-auth
     JWT_SECRET_KEY=your_secret_key
     PORT=3000
     ```
