@@ -7,18 +7,16 @@ const morgan = require("morgan");
 const colors = require("colors");
 
 // Route files
-const auth = require("./routes/auth");
-const { json } = require("body-parser");
+const main = require("./routes/main");
 
 // Load environmental variables
 dotenv.config({ path: "./config/.env" });
 // Create the express server
 const app = express();
 connectDB();
-//mount routers
 app.use(morgan("dev"));
-app.use(json());
-app.use("/api/v1/auth", auth);
+app.use(express.json());
+app.use("/api/v1", main);
 const PORT = process.env.PORT;
 const server = app.listen(PORT, () => {
   console.log(

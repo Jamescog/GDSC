@@ -8,6 +8,22 @@ const {
 exports.createNewUser = async (req, res, next) => {
   try {
     const { firstName, lastName, username, email, password } = req.body;
+    const expectedProperties = [
+      "firstName",
+      "lastName",
+      "username",
+      "email",
+      "password",
+    ];
+
+    expectedProperties.forEach((prop) => {
+      if (!req.body.hasOwnProperty(prop)) {
+        return res.status(400).json({
+          success: false,
+          msg: `Missing ${prop}`,
+        });
+      }
+    });
 
     // Hash password
     const hashedPassword = await hashPassword(password);
@@ -23,7 +39,7 @@ exports.createNewUser = async (req, res, next) => {
     await user.save();
 
     // Return success response
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       data: user,
     });
@@ -61,5 +77,27 @@ exports.loginUser = async (req, res, next) => {
   } catch (err) {
     console.error(err);
     res.status(500).send("Internal server error");
+  }
+};
+
+exports.updateUser = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const update = await User.findOneAndUpdate({ email }, req.body, {
+      new: true,
+    });
+    res.status(200).json({ updating });
+  } catch (err) {
+    next(err.message);
+  }
+};
+
+exports.deleteUser = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const deleted = await User.findOneAndDelete({ email });
+    return res.status(200).json({ deleted });
+  } catch (err) {
+    next(err.message);
   }
 };
