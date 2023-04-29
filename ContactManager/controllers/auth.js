@@ -20,7 +20,7 @@ exports.createNewUser = async (req, res, next) => {
       if (!req.body.hasOwnProperty(prop)) {
         return res.status(400).json({
           success: false,
-          msg: `Missing ${prop}`,
+          message: `Missing ${prop}`,
         });
       }
     });
@@ -54,7 +54,9 @@ exports.loginUser = async (req, res, next) => {
 
     // Check if email and password were provided
     if (!email || !password) {
-      return res.status(400).send("Missing email or password");
+      return res
+        .status(400)
+        .json({ success: false, message: "Missing email or password" });
     }
 
     // Find user by email
@@ -62,21 +64,27 @@ exports.loginUser = async (req, res, next) => {
 
     // If user not found, return error
     if (!user) {
-      return res.status(404).send("User not found");
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
     }
 
     // Compare password with stored hash
     const passwordMatch = await comparePassword(password, user.password);
     if (!passwordMatch) {
-      return res.status(401).send("Incorrect password");
+      return res
+        .status(401)
+        .json({ success: false, message: "Incorrect password" });
     }
 
     // Generate and return JWT token
     const token = jwt.sign({ email }, process.env.JWT_SECRET);
-    res.send({ token });
+    return res.status(200).json({ success: true, token });
   } catch (err) {
     console.error(err);
-    res.status(500).send("Internal server error");
+    return res
+      .status(500)
+      .json({ success: false, message: "Internal server error" });
   }
 };
 
@@ -88,7 +96,7 @@ exports.updateUser = async (req, res, next) => {
     });
     res.status(200).json({ updating });
   } catch (err) {
-    next(err.message);
+    return res.status(404).json({ success: false, message: err.message });
   }
 };
 
