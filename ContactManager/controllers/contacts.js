@@ -18,7 +18,7 @@ exports.createContact = async (req, res, next) => {
     await contact.save();
     res.status(201).json({ succuss: true, contact });
   } catch (error) {
-    if (error instanceof mongoose.Error) {
+    if (error instanceof mongoose.Error.ValidationError) {
       res.status(400).json({ success: false, error: error.message });
     } else if (error.code === 11000) {
       res.status(400).json({ message: "Duplicate key error" });
